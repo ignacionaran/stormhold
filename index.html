@@ -99,27 +99,27 @@ html{scroll-padding-top:90px}body{background:var(--bg)}.wrap{width:min(1180px,ca
 <!-- Edit --fire / --fire-hi below to change the accent color.               -->
 <!-- ====================================================================== -->
 <style id="fire-theme">
-:root{--fire:#ff5a1f;--fire-hi:#ff8a4d;--fire-lo:#e04400;--copper:#ff5a1f;--muted:#b4b7bf;--gutter:clamp(20px,4.5vw,96px)}
+:root{--fire:#ff5a1f;--fire-hi:#ff8a4d;--fire-lo:#e04400;--copper:#ff5a1f;--muted:#b4b7bf}
 html,body{overflow-x:clip}
 body{font-size:16px}
 ::selection{background:var(--fire);color:#140700}
 
-/* ===== WIDE LAYOUT (full screen) ===== */
-.wrap,.hero-content,.assembly-scene{width:calc(100% - 2*var(--gutter))!important;max-width:2200px;margin-inline:auto}
-.hero-grid{inset:72px var(--gutter) 0!important}
-.hero-bottom{left:var(--gutter)!important;right:var(--gutter)!important}
-.orb-label{right:var(--gutter)!important}
-.hero h1{font-size:clamp(46px,5.6vw,104px)!important;max-width:1300px!important}
-.hero-description{font-size:clamp(16px,1.25vw,21px)!important;max-width:680px!important;color:#b9bbc3!important}
-.composer{max-width:min(680px,48vw)!important}
-.prompt-ideas{max-width:min(680px,48vw)!important}
-.section-head h2,.story-title h2,.faq h2{font-size:clamp(36px,4.2vw,76px)!important}
-.final-cta h2{font-size:clamp(44px,5.4vw,100px)!important}
-.section-head p{max-width:380px!important}
-.story-grid{grid-template-columns:300px minmax(0,1fr)!important}
-.project-heading{font-size:clamp(40px,3.4vw,72px)!important}
-.art-serein .project-heading{font-size:clamp(46px,3.9vw,80px)!important}
+/* ===== LAYOUT: original centered format, 30% wider (1180px -> 1534px) ===== */
+:root{--wide:1534px}
+.wrap,.hero-content,.assembly-scene{width:min(var(--wide),calc(100% - 96px))!important;margin-inline:auto}
+.hero-grid{inset:72px max(48px,calc((100% - var(--wide))/2)) 0!important}
+.hero-bottom{left:max(48px,calc((100% - var(--wide))/2))!important;right:max(48px,calc((100% - var(--wide))/2))!important}
+.orb-label{right:max(48px,calc((100% - var(--wide))/2))!important}
+.hero h1{font-size:clamp(46px,5.6vw,92px)!important;max-width:1100px!important}
+.hero-description{font-size:clamp(16px,1.2vw,19px)!important;max-width:560px!important;color:#b9bbc3!important}
+.composer{max-width:600px!important}
+.prompt-ideas{max-width:600px!important}
+.section-head h2,.story-title h2,.faq h2{font-size:clamp(36px,4vw,64px)!important}
+.final-cta h2{font-size:clamp(44px,5vw,84px)!important}
+.section-head p{max-width:340px!important}
 .hero-stage{min-height:820px!important;padding-top:clamp(96px,12vh,150px)!important}
+@media(max-width:1050px){.wrap,.hero-content,.assembly-scene{width:calc(100% - 64px)!important}.hero-grid{inset:72px 32px 0!important}.hero-bottom{left:32px!important;right:32px!important}.orb-label{right:32px!important}}
+@media(max-width:760px){.wrap,.hero-content,.assembly-scene{width:calc(100% - 40px)!important}.hero-grid{inset:64px 20px 0!important}.hero-bottom{left:20px!important;right:20px!important}.orb-label{right:20px!important}}
 
 /* ===== READABLE TEXT ===== */
 .eyebrow{font-size:12px!important;color:#b5b8c1!important}
@@ -173,10 +173,10 @@ body{font-size:16px}
 .floating-palette p{font-size:11px!important}.palette-live{font-size:9px!important}
 .export-card h4{font-size:22px!important}.export-card p{font-size:13px!important}.export-card .pill{font-size:12px!important}
 .figure-caption{font-size:11px!important;color:#8d93a0!important}.figure-coordinate{font-size:11px!important;color:#7c8290!important}
-.feature h3{font-size:clamp(18px,1.5vw,24px)!important}
+.feature h3{font-size:clamp(18px,1.4vw,22px)!important}
 .feature>p{font-size:15px!important;color:#aab0bc!important;max-width:420px!important}
 .feature-num{font-size:11px!important;color:#8d93a0!important}
-.feature .feature-visual{height:clamp(240px,20vw,340px)!important}
+.feature .feature-visual{height:clamp(240px,18vw,300px)!important}
 .plan-heading h3,.price-card h3{font-size:20px!important}
 .plan-heading .popular{font-size:11px!important}
 .plan-description{font-size:14px!important;color:#aeb1ba!important}
@@ -186,7 +186,7 @@ body{font-size:16px}
 .price-card>.pill{font-size:14px!important;padding:14px!important}
 .faq summary{font-size:17px!important}
 .faq p,.faq details p{font-size:15px!important;color:#b0b4bd!important}
-.final-cta p{font-size:clamp(15px,1.2vw,19px)!important;color:#b4b8c1!important}
+.final-cta p{font-size:clamp(15px,1.1vw,17px)!important;color:#b4b8c1!important}
 .final-cta .pill{font-size:15px!important;padding:16px 24px!important}
 .final-note{font-size:13px!important;color:#8d93a0!important}
 .final-art-label{font-size:11px!important;color:#9a9da6!important}
@@ -213,15 +213,15 @@ body{font-size:16px}
 .assembly-layers small{font-size:10px!important}.layer-row{font-size:12px!important}
 .assembled-nav{font-size:11px!important}.assembled-nav b{font-size:14px!important}
 .assembled-content small{font-size:10px!important}
-.assembled-content h3{font-size:clamp(28px,3.2vw,56px)!important}
+.assembled-content h3{font-size:clamp(28px,3vw,46px)!important}
 .assembled-content p{font-size:12px!important;max-width:300px!important;color:#b0b5c0!important}
 .assembled-content button,.assembled-cta{font-size:11px!important;padding:10px 16px!important}
 .assembled-bottom{font-size:10px!important}.assembled-bottom b{font-size:12px!important}
 .assembly-badge{font-size:13px!important}
 .assembly-chapters button{font-size:13px!important}.assembly-chapters button span{font-size:11px!important}
 .assembly-scroll,.assembly-scroll b{font-size:11px!important}
-.assembly-title>span{font-size:clamp(38px,4.4vw,80px)!important}
-.assembly-title{width:min(900px,60vw)!important;height:clamp(122px,10vw,190px)!important}
+.assembly-title>span{font-size:clamp(38px,4.2vw,64px)!important}
+.assembly-title{width:min(700px,60vw)!important;height:clamp(122px,9vw,150px)!important}
 
 /* ===== FIRE ORANGE PALETTE ===== */
 .eyebrow:before,.page-progress,.step:before,.story-track i,.hero-particle-meter i,.assembly-meter i,.brief-fragment .brief-caret,.assembly-chapters button:before{background:var(--fire)!important}
@@ -275,7 +275,6 @@ stop[stop-color="#e7bd97"]{stop-color:var(--fire)!important}
 
 /* ===== MOBILE (100% mobile-friendly) ===== */
 @media(max-width:760px){
-  :root{--gutter:20px}
   body{font-size:16px}
   .hero{height:200svh!important}
   .hero-stage{min-height:940px!important;padding-top:104px!important}
