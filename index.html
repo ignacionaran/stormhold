@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -92,162 +93,293 @@ html{scroll-padding-top:90px}body{background:var(--bg)}.wrap{width:min(1180px,ca
 @media(max-width:1050px) and (min-width:761px){.horizon-art{width:34%;right:8px;top:57px}}
 @media(max-width:760px){.horizon-art{width:108px;max-width:32%;height:108px;right:12px;top:auto;bottom:44px;filter:drop-shadow(0 12px 12px #0004)}.assembled-content{max-width:100%;margin-top:14px}.assembled-content h3{font-size:26px}.assembled-content p{max-width:170px}}
 </style>
+
+<!-- ====================================================================== -->
+<!-- FIRE ORANGE THEME + WIDE LAYOUT + READABLE TEXT + MOBILE FIXES          -->
+<!-- Edit --fire / --fire-hi below to change the accent color.               -->
+<!-- ====================================================================== -->
+<style id="fire-theme">
+:root{--fire:#ff5a1f;--fire-hi:#ff8a4d;--fire-lo:#e04400;--copper:#ff5a1f;--muted:#b4b7bf;--gutter:clamp(20px,4.5vw,96px)}
+html,body{overflow-x:clip}
+body{font-size:16px}
+::selection{background:var(--fire);color:#140700}
+
+/* ===== WIDE LAYOUT (full screen) ===== */
+.wrap,.hero-content,.assembly-scene{width:calc(100% - 2*var(--gutter))!important;max-width:2200px;margin-inline:auto}
+.hero-grid{inset:72px var(--gutter) 0!important}
+.hero-bottom{left:var(--gutter)!important;right:var(--gutter)!important}
+.orb-label{right:var(--gutter)!important}
+.hero h1{font-size:clamp(46px,5.6vw,104px)!important;max-width:1300px!important}
+.hero-description{font-size:clamp(16px,1.25vw,21px)!important;max-width:680px!important;color:#b9bbc3!important}
+.composer{max-width:min(680px,48vw)!important}
+.prompt-ideas{max-width:min(680px,48vw)!important}
+.section-head h2,.story-title h2,.faq h2{font-size:clamp(36px,4.2vw,76px)!important}
+.final-cta h2{font-size:clamp(44px,5.4vw,100px)!important}
+.section-head p{max-width:380px!important}
+.story-grid{grid-template-columns:300px minmax(0,1fr)!important}
+.project-heading{font-size:clamp(40px,3.4vw,72px)!important}
+.art-serein .project-heading{font-size:clamp(46px,3.9vw,80px)!important}
+.hero-stage{min-height:820px!important;padding-top:clamp(96px,12vh,150px)!important}
+
+/* ===== READABLE TEXT ===== */
+.eyebrow{font-size:12px!important;color:#b5b8c1!important}
+.nav-links a,.quick-trigger{font-size:14px!important;color:#c3c5cc!important}
+.quick-trigger kbd{font-size:12px!important}
+.pill{font-size:14px!important}
+.nav .pill{font-size:13px!important}
+.announcement{font-size:13px!important;color:#c3c5cc!important}.announcement span{font-size:12px!important}
+.composer textarea{font-size:16px!important;height:72px!important}
+.composer-options,.composer-options select{font-size:13px!important;max-width:170px!important}
+.prompt-ideas button{font-size:13px!important;color:#b4b7bf!important;padding:9px 13px!important}
+.hero-note{font-size:13px!important;color:#9a9da6!important}
+.hero-bottom{font-size:12px!important;color:#a3a6af!important}
+.orb-label,.orb-label b{font-size:11px!important;color:#b0b3bc!important}
+.qualities-label{font-size:12px!important;max-width:200px!important;color:#9a9da6!important}
+.quality{font-size:15px!important;color:#c3c5cc!important}.quality svg{width:22px!important;height:22px!important}
+.section-head p{font-size:16px!important;color:#b4b7bf!important}
+.filters button{font-size:14px!important;color:#aeb1ba!important}.filters button span{font-size:11px!important}
+.gallery-hint{font-size:12px!important;color:#9a9da6!important}
+.project-meta h3{font-size:19px!important}.project-meta h3 span{font-size:12px!important;color:#9a9da6!important}
+.project-meta p{font-size:14px!important;color:#aeb1ba!important}
+.project-chrome{font-size:11px!important;color:#a7abb5!important}
+.project-scene .mini-nav span,.mini-nav span:last-child{font-size:11px!important}
+.project-scene .mini-nav b{font-size:14px!important}
+.project-kicker{font-size:11px!important;opacity:.8!important}
+.scene-description{font-size:12px!important;max-width:190px!important;opacity:.85!important}
+.scene-baseline{font-size:10px!important;opacity:.85!important}
+.preview-badge{font-size:12px!important}
+.showcase-bottom>span,.showcase-bottom .text-link{font-size:14px!important;color:#b4b7bf!important}
+.word-reveal span{color:#555865}.word-reveal span.lit{color:#f1f2f4}
+.step h3{font-size:18px!important}.step p{font-size:14px!important;color:#aeb2bc!important;max-height:120px!important}
+.step{color:#8d93a0!important}.step.active{color:#f1f2f4!important}
+.step-number{font-size:11px!important;color:#8d93a0!important}
+.story-title .index{font-size:13px!important}
+.story-foot{font-size:11px!important;color:#9097a4!important}
+.editor-top,.editor-top .editor-url,.editor-size,.editor-top .publish-mini{font-size:11px!important}
+.editor-size>span{font-size:9px!important}
+.editor-body{grid-template-columns:215px minmax(0,1fr)!important}
+.editor-brand{font-size:12px!important}
+.chat-prompt{font-size:11px!important;line-height:1.55!important}
+.chat-response{font-size:11px!important;color:#aab0bc!important}
+.build-checks{font-size:10.5px!important;color:#b0b7c4!important}
+.editor-file{font-size:11px!important}.editor-file small{font-size:9.5px!important}
+.chat-input{font-size:11px!important}
+.editor-viewport .mini-nav b{font-size:12px!important}.editor-viewport .mini-nav span{font-size:10px!important}
+.editor-collection-label{font-size:10px!important}
+.editor-viewport>p{font-size:12px!important;max-width:240px!important}
+.editor-viewport .tiny-cta{font-size:11px!important;padding:10px 14px!important}
+.editor-page-foot{font-size:9px!important}
+.canvas-selection>span{font-size:9px!important}
+.floating-palette p{font-size:11px!important}.palette-live{font-size:9px!important}
+.export-card h4{font-size:22px!important}.export-card p{font-size:13px!important}.export-card .pill{font-size:12px!important}
+.figure-caption{font-size:11px!important;color:#8d93a0!important}.figure-coordinate{font-size:11px!important;color:#7c8290!important}
+.feature h3{font-size:clamp(18px,1.5vw,24px)!important}
+.feature>p{font-size:15px!important;color:#aab0bc!important;max-width:420px!important}
+.feature-num{font-size:11px!important;color:#8d93a0!important}
+.feature .feature-visual{height:clamp(240px,20vw,340px)!important}
+.plan-heading h3,.price-card h3{font-size:20px!important}
+.plan-heading .popular{font-size:11px!important}
+.plan-description{font-size:14px!important;color:#aeb1ba!important}
+.price>span,.billing-note,.pricing-note{font-size:13px!important;color:#a3a7b1!important}
+.billing button{font-size:13px!important}.billing button span{font-size:11px!important}
+.price-card ul,.price-card li{font-size:14px!important;color:#c3c6ce!important}
+.price-card>.pill{font-size:14px!important;padding:14px!important}
+.faq summary{font-size:17px!important}
+.faq p,.faq details p{font-size:15px!important;color:#b0b4bd!important}
+.final-cta p{font-size:clamp(15px,1.2vw,19px)!important;color:#b4b8c1!important}
+.final-cta .pill{font-size:15px!important;padding:16px 24px!important}
+.final-note{font-size:13px!important;color:#8d93a0!important}
+.final-art-label{font-size:11px!important;color:#9a9da6!important}
+.footer-links{font-size:14px!important}
+.footer-bottom{font-size:13px!important;color:#9a9da6!important}
+.toast{font-size:14px!important}
+.studio-label{font-size:11px!important}
+.studio-controls label{font-size:12px!important}
+.studio-controls textarea,.studio-controls select{font-size:16px!important}
+.studio-status{font-size:13px!important}.studio-explainer{font-size:12px!important;color:#8d99ab!important}
+.preview-toolbar{font-size:11px!important}
+.studio-export{font-size:12px!important}
+.generation-overlay p{font-size:26px!important}
+.command-top h2{font-size:15px!important}.command-items button{font-size:15px!important}.command-items button span{font-size:12px!important}
+.command-hint{font-size:12px!important}
+/* assembly section */
+.assembly-aside{font-size:14px!important;width:300px!important}
+.assembly-readout,.assembly-aside .assembly-readout{font-size:11px!important}
+.scene-axis{font-size:11px!important;color:#7c8290!important}
+.brief-fragment{width:320px!important;margin-left:-160px!important}
+.brief-fragment small{font-size:11px!important}.brief-fragment p{font-size:16px!important}
+.assembly-chrome{font-size:11px!important}.assembly-chrome .chrome-ready{font-size:10px!important}
+.assembly-app{grid-template-columns:190px 1fr!important}
+.assembly-layers small{font-size:10px!important}.layer-row{font-size:12px!important}
+.assembled-nav{font-size:11px!important}.assembled-nav b{font-size:14px!important}
+.assembled-content small{font-size:10px!important}
+.assembled-content h3{font-size:clamp(28px,3.2vw,56px)!important}
+.assembled-content p{font-size:12px!important;max-width:300px!important;color:#b0b5c0!important}
+.assembled-content button,.assembled-cta{font-size:11px!important;padding:10px 16px!important}
+.assembled-bottom{font-size:10px!important}.assembled-bottom b{font-size:12px!important}
+.assembly-badge{font-size:13px!important}
+.assembly-chapters button{font-size:13px!important}.assembly-chapters button span{font-size:11px!important}
+.assembly-scroll,.assembly-scroll b{font-size:11px!important}
+.assembly-title>span{font-size:clamp(38px,4.4vw,80px)!important}
+.assembly-title{width:min(900px,60vw)!important;height:clamp(122px,10vw,190px)!important}
+
+/* ===== FIRE ORANGE PALETTE ===== */
+.eyebrow:before,.page-progress,.step:before,.story-track i,.hero-particle-meter i,.assembly-meter i,.brief-fragment .brief-caret,.assembly-chapters button:before{background:var(--fire)!important}
+.assembly-readout i{background:var(--fire)!important;box-shadow:0 0 10px #ff5a1fa0!important}
+.pill.copper{background:linear-gradient(135deg,#ff7a3d,#ff4d00)!important;border-color:#ff7a3d80!important;color:#140700!important;box-shadow:inset 0 1px 0 #ffb58f,0 2px 18px #ff5a1f40!important}
+.pill.copper:hover{box-shadow:inset 0 1px 0 #ffc9ab,0 6px 34px #ff5a1f66!important}
+.announcement{border-color:#ff5a1f40!important}.announcement span{background:#ff5a1f22!important;color:var(--fire-hi)!important}
+.hero h1 em{background:linear-gradient(100deg,#c9cdd5 0%,#ff6a2b 45%,#8d929e 80%)!important;background-size:220% 100%!important;background-position:calc(var(--hero-p)*100%) 0!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+.small-star,.composer-mark,.brand svg,.orb-label:before,.chrome-ready svg,.assembly-chrome svg,.editor-brand svg,.command-top svg{color:var(--fire)!important}
+.composer:focus-within{border-color:#ff5a1f99!important;box-shadow:0 10px 70px #0008,0 0 28px #ff5a1f22!important}
+.prompt-ideas button:hover{color:var(--fire-hi)!important;background:#ff5a1f18!important;border-color:#ff5a1f66!important}
+.quality:last-child,.qualities .quality:hover svg{color:var(--fire-hi)!important}
+.word-reveal em{color:var(--fire)!important}
+.step.active .step-number,.story-title .index b{color:var(--fire)!important}
+.assembled-content small{color:var(--fire-hi)!important}
+.assembled-content button,.assembled-cta{background:var(--fire)!important;color:#140700!important}
+.layer-token i:nth-child(3){background:var(--fire)!important}
+.assembly-selection{border-color:#ff5a1f90!important}.assembly-selection:before,.assembly-selection:after{background:var(--fire)!important}
+.canvas-selection{border-color:#ff5a1f80!important}.canvas-selection>span{background:var(--fire)!important;color:#140700!important}
+.assembly-page{background:radial-gradient(ellipse at 83% 80%,#ff5a1f1c,transparent 55%),#191b20!important}
+.assembly-sticky:before{background:radial-gradient(ellipse 50% 55% at 50% 63%,#ff5a1f12,transparent)!important}
+.assembled-sphere{background:repeating-radial-gradient(ellipse at 35% 30%,transparent 0 4px,#ff8a4d4a 4.7px 5px,transparent 5.7px 9px),radial-gradient(circle at 32% 25%,#ff9a62,#8a2f0d 40%,#17191d 69%)!important}
+.horizon-art img{filter:hue-rotate(-14deg) saturate(1.6)}
+.price-card.featured{border-color:#ff5a1f80!important;background:radial-gradient(ellipse at 50% 0,#ff5a1f1c,transparent 65%),#131417!important}
+.price-card.featured:before{background:linear-gradient(90deg,transparent,#ff8a4d,transparent)!important;box-shadow:0 0 25px #ff5a1f55!important}
+.plan-heading .popular{color:var(--fire-hi)!important;border-color:#ff5a1f50!important;background:#ff5a1f12!important}
+.billing button[aria-pressed=true] span{color:var(--fire)!important}
+.price-card li:before{color:var(--fire)!important}
+.final-cta{background:radial-gradient(ellipse at 80% 50%,#ff5a1f10,transparent 45%)!important}
+.final-art-label i{background:var(--fire)!important;box-shadow:0 0 12px #ff5a1f80!important}
+.footer-links a:hover,.text-link:hover{color:var(--fire-hi)!important}
+.feature:hover .feature-icon{color:var(--fire-hi)!important}.feature:hover .figure-coordinate{color:var(--fire-hi)!important}
+.project-card:hover .project-meta>span{color:var(--fire)!important}
+:focus-visible{outline-color:var(--fire)!important}
+@keyframes icon-gesture{0%,18%,100%{transform:none;color:#b3b9c2}7%{transform:translateY(-2px) rotate(-10deg);color:#ff8a4d}12%{transform:translateY(0) rotate(3deg);color:#ff8a4d}}
+/* inline SVG drawings */
+[stroke="#e8bc98"],[stroke="#dfb58f"],[stroke="#e7b691"],[stroke="#e7bc97"],[stroke="#e5b68e"]{stroke:var(--fire)!important}
+[fill="#e5b68e"],[fill="#e4b78e"]{fill:var(--fire)!important}
+[fill="#e7bc9910"]{fill:#ff5a1f18!important}
+stop[stop-color="#e7bd97"]{stop-color:var(--fire)!important}
+
+/* ===== TABLET ===== */
+@media(max-width:1050px){
+  .composer,.prompt-ideas{max-width:560px!important}
+  .editor-body{grid-template-columns:190px minmax(0,1fr)!important}
+  .build-checks,.editor-file{display:none!important}
+  .assembly-aside{width:230px!important}
+  .scene-baseline span:last-child{display:none!important}
+  .story-grid{grid-template-columns:200px minmax(0,1fr)!important}
+}
+
+/* ===== MOBILE (100% mobile-friendly) ===== */
+@media(max-width:760px){
+  :root{--gutter:20px}
+  body{font-size:16px}
+  .hero{height:200svh!important}
+  .hero-stage{min-height:940px!important;padding-top:104px!important}
+  .hero h1{font-size:clamp(40px,11.2vw,60px)!important;line-height:1.06!important}
+  .hero-description{font-size:15px!important;max-width:340px!important}
+  .composer,.prompt-ideas{max-width:100%!important;width:100%!important}
+  .prompt-ideas button{font-size:13px!important;min-height:40px}
+  .orb-label{display:none!important}
+  .hero-bottom{font-size:11px!important;bottom:18px!important}
+  .hero-bottom .coordinates{font-size:11px!important;max-width:150px!important}
+  .nav-links a{font-size:18px!important;padding:6px 0}
+  .nav .pill{font-size:13px!important;padding:11px 14px!important}
+  .menu-toggle,.motion-toggle,.icon-button{width:44px!important;height:44px!important}
+  .pill,.filters button,.billing button,.assembly-chapters button,.step{min-height:44px}
+  .qualities .wrap{gap:16px 22px!important}.quality{font-size:14px!important}
+  .section-head h2,.story-title h2,.faq h2,.pricing .section-head h2{font-size:clamp(34px,9.5vw,44px)!important}
+  .final-cta h2{font-size:clamp(38px,10.5vw,52px)!important}
+  .section-head p{font-size:15px!important}
+  .filters{flex-wrap:wrap}.filters button{font-size:13px!important;padding:10px 12px!important}
+  .project-art{aspect-ratio:.9!important;max-height:560px!important}
+  .project-heading{font-size:42px!important}.art-serein .project-heading{font-size:50px!important}
+  .scene-baseline span:last-child{display:none!important}
+  .scene-baseline{font-size:10px!important}
+  .scene-description{font-size:13px!important;max-width:200px!important}
+  .project-kicker,.project-scene .mini-nav span{font-size:11px!important}
+  .project-meta h3{font-size:18px!important}.project-meta p{font-size:14px!important}
+  .word-reveal,.manifesto .word-reveal{font-size:34px!important}
+  /* story / editor mock */
+  .step h3{font-size:12px!important;line-height:1.35}.step-number{font-size:10px!important}
+  .editor-body{grid-template-columns:1fr!important;min-height:0!important}
+  .editor-sidebar{padding:12px!important;gap:10px!important;border-right:0!important;border-bottom:1px solid #ffffff12}
+  .chat-response,.build-checks,.editor-file{display:none!important}
+  .chat-prompt{font-size:12px!important}.chat-input{font-size:11px!important}
+  .editor-brand{font-size:12px!important}
+  .editor-viewport{min-height:360px;padding:18px!important}
+  .editor-viewport h3{font-size:42px!important}
+  .editor-viewport>p{font-size:12px!important;max-width:60%!important}
+  .editor-viewport .tiny-cta{font-size:11px!important;padding:10px 12px!important}
+  .editor-viewport .mini-nav span{font-size:10px!important}
+  .editor-collection-label{font-size:9.5px!important;max-width:60%!important}
+  .editor-page-foot{display:none!important}
+  .editor-landscape{width:80%!important;height:55%!important;right:-12%!important}
+  .editor-top,.editor-top .editor-url,.editor-size,.editor-top .publish-mini{font-size:10px!important}
+  .editor-size{display:none!important}
+  .floating-palette{width:150px!important;right:8px!important;bottom:16px!important}
+  .floating-palette p{font-size:11px!important}
+  .swatches button{width:30px!important;height:30px!important}
+  .story-foot{font-size:10px!important}
+  /* assembly */
+  .assembly{height:260vh!important}
+  .assembly-title{height:120px!important;width:100%!important}
+  .assembly-title>span{font-size:clamp(30px,8.6vw,40px)!important}
+  .brief-fragment{width:260px!important;margin-left:-130px!important}
+  .brief-fragment p{font-size:14px!important}
+  .assembly-chapters{gap:14px!important}.assembly-chapters button{font-size:12px!important}
+  .assembly-scroll b{font-size:10px!important}
+  .assembly-chrome{font-size:10px!important}
+  .assembled-content{max-width:100%!important}
+  .assembled-content h3{font-size:28px!important}
+  .assembled-content p{font-size:12px!important;max-width:210px!important}
+  .assembled-content button,.assembled-cta{font-size:11px!important}
+  .assembled-nav{font-size:10px!important}.assembled-nav b{font-size:13px!important}
+  .assembled-bottom,.assembly-selection{display:none!important}
+  .assembly-badge{font-size:12px!important;padding:9px 12px!important}
+  /* features / pricing / faq */
+  .feature>p{font-size:15px!important}.feature h3{font-size:20px!important}
+  .feature .feature-visual{height:260px!important}
+  .price-card li{font-size:15px!important}
+  .faq summary{font-size:16px!important;padding-block:20px!important;min-height:44px}
+  .final-grid{grid-template-columns:1fr!important}
+  .footer-links{flex-wrap:wrap;gap:12px 18px!important}.footer-links a:last-child{display:inline!important}
+  .footer-bottom{font-size:12px!important;flex-direction:column;gap:10px!important}
+  /* studio dialog */
+  .studio-dialog{width:calc(100% - 12px)!important;height:calc(100dvh - 20px)!important}
+  .studio-controls{display:flex!important;flex-direction:column!important;max-height:48vh!important;overflow:auto!important}
+  .studio-controls textarea{height:90px!important}
+  .studio-status{font-size:13px!important}.studio-label{display:none}
+  .preview-device-buttons button{padding:9px!important}
+  .command-items button{padding:15px!important}
+}
+@media(max-width:375px){.hero h1{font-size:40px!important}.hero-stage{min-height:980px!important}}
+</style>
 <!--
-Embedded font licenses
-DM Sans
-Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-https://scripts.sil.org/OFL
------------------------------------------------------------
-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
------------------------------------------------------------
-PREAMBLE
-The goals of the Open Font License (OFL) are to stimulate worldwide
-development of collaborative font projects, to support the font creation
-efforts of academic and linguistic communities, and to provide a free and
-open framework in which fonts may be shared and improved in partnership
-with others.
-The OFL allows the licensed fonts to be used, studied, modified and
-redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded,
-redistributed and/or sold with any software provided that any reserved
-names are not used by derivative works. The fonts and derivatives,
-however, cannot be released under any other type of license. The
-requirement for fonts to remain under this license does not apply
-to any document created using the fonts or their derivatives.
-DEFINITIONS
-"Font Software" refers to the set of files released by the Copyright
-Holder(s) under this license and clearly marked as such. This may
-include source files, build scripts and documentation.
-"Reserved Font Name" refers to any names specified as such after the
-copyright statement(s).
-"Original Version" refers to the collection of Font Software components as
-distributed by the Copyright Holder(s).
-"Modified Version" refers to any derivative made by adding to, deleting,
-or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to a
-new environment.
-"Author" refers to any designer, engineer, programmer, technical
-writer or other person who contributed to the Font Software.
-PERMISSION & CONDITIONS
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of the Font Software, to use, study, copy, merge, embed, modify,
-redistribute, and sell modified and unmodified copies of the Font
-Software, subject to the following conditions:
-1) Neither the Font Software nor any of its individual components,
-in Original or Modified Versions, may be sold by itself.
-2) Original or Modified Versions of the Font Software may be bundled,
-redistributed and/or sold with any software, provided that each copy
-contains the above copyright notice and this license. These can be
-included either as stand-alone text files, human-readable headers or
-in the appropriate machine-readable metadata fields within text or
-binary files as long as those fields can be easily viewed by the user.
-3) No Modified Version of the Font Software may use the Reserved Font
-Name(s) unless explicit written permission is granted by the corresponding
-Copyright Holder. This restriction only applies to the primary font name as
-presented to the users.
-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
-Software shall not be used to promote, endorse or advertise any
-Modified Version, except to acknowledge the contribution(s) of the
-Copyright Holder(s) and the Author(s) or with their explicit written
-permission.
-5) The Font Software, modified or unmodified, in part or in whole,
-must be distributed entirely under this license, and must not be
-distributed under any other license. The requirement for fonts to
-remain under this license does not apply to any document created
-using the Font Software.
-TERMINATION
-This license becomes null and void if any of the above conditions are
-not met.
-DISCLAIMER
-THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
-OTHER DEALINGS IN THE FONT SOFTWARE.
-Instrument Serif
-Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-https://scripts.sil.org/OFL
------------------------------------------------------------
-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
------------------------------------------------------------
-PREAMBLE
-The goals of the Open Font License (OFL) are to stimulate worldwide
-development of collaborative font projects, to support the font creation
-efforts of academic and linguistic communities, and to provide a free and
-open framework in which fonts may be shared and improved in partnership
-with others.
-The OFL allows the licensed fonts to be used, studied, modified and
-redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded,
-redistributed and/or sold with any software provided that any reserved
-names are not used by derivative works. The fonts and derivatives,
-however, cannot be released under any other type of license. The
-requirement for fonts to remain under this license does not apply
-to any document created using the fonts or their derivatives.
-DEFINITIONS
-"Font Software" refers to the set of files released by the Copyright
-Holder(s) under this license and clearly marked as such. This may
-include source files, build scripts and documentation.
-"Reserved Font Name" refers to any names specified as such after the
-copyright statement(s).
-"Original Version" refers to the collection of Font Software components as
-distributed by the Copyright Holder(s).
-"Modified Version" refers to any derivative made by adding to, deleting,
-or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to a
-new environment.
-"Author" refers to any designer, engineer, programmer, technical
-writer or other person who contributed to the Font Software.
-PERMISSION & CONDITIONS
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of the Font Software, to use, study, copy, merge, embed, modify,
-redistribute, and sell modified and unmodified copies of the Font
-Software, subject to the following conditions:
-1) Neither the Font Software nor any of its individual components,
-in Original or Modified Versions, may be sold by itself.
-2) Original or Modified Versions of the Font Software may be bundled,
-redistributed and/or sold with any software, provided that each copy
-contains the above copyright notice and this license. These can be
-included either as stand-alone text files, human-readable headers or
-in the appropriate machine-readable metadata fields within text or
-binary files as long as those fields can be easily viewed by the user.
-3) No Modified Version of the Font Software may use the Reserved Font
-Name(s) unless explicit written permission is granted by the corresponding
-Copyright Holder. This restriction only applies to the primary font name as
-presented to the users.
-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
-Software shall not be used to promote, endorse or advertise any
-Modified Version, except to acknowledge the contribution(s) of the
-Copyright Holder(s) and the Author(s) or with their explicit written
-permission.
-5) The Font Software, modified or unmodified, in part or in whole,
-must be distributed entirely under this license, and must not be
-distributed under any other license. The requirement for fonts to
-remain under this license does not apply to any document created
-using the Font Software.
-TERMINATION
-This license becomes null and void if any of the above conditions are
-not met.
-DISCLAIMER
-THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
-OTHER DEALINGS IN THE FONT SOFTWARE.
+Fonts: DM Sans and Instrument Serif are licensed under the SIL Open Font License 1.1 (https://scripts.sil.org/OFL).
+DM Sans: Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
+Instrument Serif: Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)
 -->
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- Canvas recolor: turns the bronze particles/lines drawn in <canvas> into fire orange.
+     Must run BEFORE the main scripts in <body>. -->
+<script>
+(()=>{
+  const fire=v=>typeof v==='string'&&v.startsWith('rgba(')
+    ? v.replace(/rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/,(m,r,g,b)=>(+r>+b+45&&+r>+g)?'rgba(255,100,40':m)
+    : v;
+  const P=CanvasRenderingContext2D.prototype;
+  ['fillStyle','strokeStyle'].forEach(k=>{
+    const d=Object.getOwnPropertyDescriptor(P,k);
+    Object.defineProperty(P,k,{configurable:true,enumerable:d.enumerable,get:d.get,set(v){d.set.call(this,fire(v))}});
+  });
+  const add=CanvasGradient.prototype.addColorStop;
+  CanvasGradient.prototype.addColorStop=function(o,c){return add.call(this,o,fire(c))};
+})();
+</script>
 <script>document.addEventListener('click', event => {
 const anchor = event.target.closest?.('a[href]');
 const href = anchor?.getAttribute('href');
@@ -545,8 +677,4 @@ command.addEventListener('keydown',e=>{if(!['ArrowDown','ArrowUp','Home','End'].
 })();
 
 </script>
-
-
-
-
 </body></html>
